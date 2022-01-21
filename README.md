@@ -1,3 +1,13 @@
+# A React + Ant Design + Tailwind
+
+This codebase demonstrates how to get Ant Design and Tailwind working within a React app, based on the latest versions and configurations available as of January 2022.  It uses react-scripts instead of craco, Tailwind 3, postcss, Tailwind typography, etc.
+
+The application is also setup with a basic React routing setup and a Tailwind application shell.
+
+![image](https://user-images.githubusercontent.com/3486466/150573271-9b99adb6-d07f-489b-a933-ea36c724a8e1.png)
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
