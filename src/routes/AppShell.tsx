@@ -14,8 +14,8 @@
   }
   ```
 */
-import { Fragment, useState, useEffect } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
+import { Fragment, useState, useEffect } from 'react';
+import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
   CogIcon,
   CollectionIcon,
@@ -26,8 +26,9 @@ import {
   UserGroupIcon,
   ViewGridIcon,
   XIcon,
-} from '@heroicons/react/outline'
-import { SearchIcon } from '@heroicons/react/solid'
+} from '@heroicons/react/outline';
+import { SearchIcon } from '@heroicons/react/solid';
+import { DatePicker, Space } from 'antd';
 
 const sidebarNavigation = [
   { name: 'Home', href: '#', icon: HomeIcon, current: false },
@@ -41,6 +42,15 @@ const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Sign out', href: '#' },
 ]
+
+function onChange(value:any, dateString:any) {
+  console.log('Selected Time: ', value);
+  console.log('Formatted Selected Time: ', dateString);
+}
+
+function onOk(value:any) {
+  console.log('onOk: ', value);
+}
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -284,6 +294,9 @@ export default function Example() {
                 <h1 id="primary-heading" className="sr-only">
                   Photos
                 </h1>
+                <Space direction="vertical" size={12} className="my-6">
+                  <DatePicker showTime onChange={onChange} onOk={onOk} />
+                </Space>
                 <article className="prose">
                   <h1>Heading 1</h1>
                   <p>Lorem ipsum...</p>
@@ -294,41 +307,45 @@ export default function Example() {
                   <h4>Heading 4</h4>
                   <p>Lorem ipsum...</p>
                   <table>
-                    <tr>
-                      <th>Company</th>
-                      <th>Contact</th>
-                      <th>Country</th>
-                    </tr>
-                    <tr>
-                      <td>Alfreds Futterkiste</td>
-                      <td>Maria Anders</td>
-                      <td>Germany</td>
-                    </tr>
-                    <tr>
-                      <td>Centro comercial Moctezuma</td>
-                      <td>Francisco Chang</td>
-                      <td>Mexico</td>
-                    </tr>
-                    <tr>
-                      <td>Ernst Handel</td>
-                      <td>Roland Mendel</td>
-                      <td>Austria</td>
-                    </tr>
-                    <tr>
-                      <td>Island Trading</td>
-                      <td>Helen Bennett</td>
-                      <td>UK</td>
-                    </tr>
-                    <tr>
-                      <td>Laughing Bacchus Winecellars</td>
-                      <td>Yoshi Tannamuri</td>
-                      <td>Canada</td>
-                    </tr>
-                    <tr>
-                      <td>Magazzini Alimentari Riuniti</td>
-                      <td>Giovanni Rovelli</td>
-                      <td>Italy</td>
-                    </tr>
+                    <thead>
+                      <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                      </tr>
+                      <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                      </tr>
+                      <tr>
+                        <td>Ernst Handel</td>
+                        <td>Roland Mendel</td>
+                        <td>Austria</td>
+                      </tr>
+                      <tr>
+                        <td>Island Trading</td>
+                        <td>Helen Bennett</td>
+                        <td>UK</td>
+                      </tr>
+                      <tr>
+                        <td>Laughing Bacchus Winecellars</td>
+                        <td>Yoshi Tannamuri</td>
+                        <td>Canada</td>
+                      </tr>
+                      <tr>
+                        <td>Magazzini Alimentari Riuniti</td>
+                        <td>Giovanni Rovelli</td>
+                        <td>Italy</td>
+                      </tr>
+                    </tbody>
                   </table>
                 </article>
               </section>
